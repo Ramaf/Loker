@@ -9,7 +9,7 @@
 @endpush
 @section('content')
 <div class="container">
-        <h1 style="text-align: center;">INformasi Lowongan Pekerjaan</h1>
+        <h1 style="text-align: center;">ini /LOKERRrr</h1>
         <div class="row gy-4">
 
           <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out">
