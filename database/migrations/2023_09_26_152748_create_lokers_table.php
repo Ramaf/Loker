@@ -6,11 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateLokersTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
         Schema::create('lokers', function (Blueprint $table) {
@@ -22,11 +18,7 @@ class CreateLokersTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+
     public function down()
     {
         Schema::dropIfExists('lokers');
