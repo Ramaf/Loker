@@ -15,7 +15,7 @@
           <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out">
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-activity icon"></i></div>
-              <h4><a href="" class="stretched-link">Lorem Ipsum</a></h4>
+              <h4><a href="" class="stretched-link">aowfaowkfoakwfoakfokawokfaokfoawkofakfoakwf</a></h4>
               <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
             </div>
           </div><!-- End Service Item -->
