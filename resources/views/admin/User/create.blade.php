@@ -2,7 +2,7 @@
 @section('title', 'Category')
 @section('content')
 <div class="x_content">
-<form id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="" action="{{  route('user.store')  }}" methode="POST" enctype="multipart/form-data">
+<form id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="" action="{{  route('user.store')  }}" method="POST" enctype="multipart/form-data">
 @csrf
 										<div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"  >Nama <span class="required">*</span>
