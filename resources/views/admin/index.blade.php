@@ -47,4 +47,24 @@
         </div>
 
       </div>
+      <div class="container">
+      <div class = "row gy-4">
+      <div class="bs-glyphicons">
+                        <ul class="bs-glyphicons-list">
+
+                          <li style="width:50%;">
+                            <span class="glyphicon glyphicon-asterisk" aria-hidden="true">Pertama</span>
+                            <span class="glyphicon-class">glyphicon glyphicon-asterisk</span>
+                          </li>
+
+                          <li style="width:50%;">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true">KEDUAAA</span>
+                            <span class="glyphicon-class">glyphicon glyphicon-plus</span>
+                          </li>
+
+
+                        </ul>
+                      </div>
+                      </div>
+                      </div>
 @endsection

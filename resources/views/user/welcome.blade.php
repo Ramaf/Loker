@@ -110,6 +110,8 @@
         </div>
 
       </div>
+
+     
     </section><!-- End Featured Services Section -->
 
   <!-- Vendor JS Files -->
