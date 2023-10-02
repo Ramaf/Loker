@@ -13,13 +13,14 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('nama');
             $table->string('umur');
+            $table->date('ttl');
             $table->string('nohp');
             $table->string('email')->unique();
-            $table->string('ijazah');
-            $table->string('foto');
+            $table->file('ijazah');
+            $table->file('foto');
             $table->string('lamaran');
             $table->string('alamat');
-            $table->string('role');
+            $table->string('role')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
@@ -27,7 +28,7 @@ class CreateUsersTable extends Migration
         });
     }
 
-   
+
     public function down()
     {
         Schema::dropIfExists('users');
