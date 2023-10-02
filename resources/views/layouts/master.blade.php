@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    @stack('page-css')
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
@@ -18,7 +19,7 @@
     <link href="assets/vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
     <link href="assets/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-	
+
     <!-- bootstrap-progressbar -->
     <link href="assets/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- JQVMap -->
@@ -28,7 +29,7 @@
 
     <!-- Custom Theme Style -->
     <link href="assets/build/css/custom.min.css" rel="stylesheet">
-    @stack('page-css')
+
   </head>
 
   <body class="nav-md">
@@ -59,7 +60,7 @@
             @include('layouts.sidebar')
 
             <!-- /menu footer buttons -->
-            
+
             <!-- /menu footer buttons -->
           </div>
         </div>
@@ -93,7 +94,7 @@
           <div class="row">
           @yield('content')
           </div>
-          
+
         </div>
           <!-- /top tiles -->
 
@@ -102,7 +103,7 @@
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-            
+
           </div>
           <div class="clearfix"></div>
         </footer>
@@ -151,6 +152,6 @@
     <!-- Custom Theme Scripts -->
     <script src="assets/build/js/custom.min.js"></script>
     @stack('page-script')
-	
+
   </body>
 </html>
