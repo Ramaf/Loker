@@ -19,6 +19,7 @@ Route::get('/', function () {
     return view('user.welcome');
 });
 Route::get('/loker', [LokerController::class, 'index']);
-Route::get('/User', [UserController::class, 'index']);
-Route::get('/user/create', [UserController::class, 'create']);
-Route::post('/user/store', 'UserController@store')->name('user.store');
+Route::get('/user', [UserController::class, 'index'])->name('user.index');
+Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
+Route::post('/user/store', [UserController::class, 'store'])->name('user.store');
+// Route::post('/user/store', 'UserController@store')->name('user.store');

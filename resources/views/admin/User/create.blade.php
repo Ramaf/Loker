@@ -2,15 +2,14 @@
 @section('title', 'Category')
 @section('content')
     <div class="x_content">
-        <form id="demo-form2" class="form-horizontal form-label-left"
-            action="{{ route('user.store') }}" method="POST" enctype="multipart/form-data">
+        <form id="demo-form2" class="form-horizontal form-label-left" action="{{ route('user.store') }}" method="POST"
+            enctype="multipart/form-data">
             @csrf
             <div class="item form-group">
-                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Nama <span
-                        class="required">*</span>
+                <label class="col-form-label col-md-3 col-sm-3 label-align">Nama <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 ">
-                    <input type="text" name="nama" id="first-name" required="required" class="form-control ">
+                    <input type="text" name="nama" required="required" class="form-control ">
                 </div>
             </div>
             <div class="item form-group">
@@ -18,57 +17,56 @@
                         class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 ">
-                    <input type="number" name="umur" id="last-name" name="last-name" required="required"
-                        class="form-control">
+                    <input type="number" name="umur" required="required" class="form-control">
                 </div>
             </div>
             <div class="item form-group">
-                <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">nohp</label>
+                <label class="col-form-label col-md-3 col-sm-3 label-align">nohp</label>
                 <div class="col-md-6 col-sm-6 ">
-                    <input id="middle-name" name="nohp" class="form-control" type="text" name="middle-name">
+                    <input name="nohp" class="form-control" type="number">
                 </div>
             </div>
             <div class="item form-group">
-                <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">email</label>
+                <label class="col-form-label col-md-3 col-sm-3 label-align">email</label>
                 <div class="col-md-6 col-sm-6 ">
-                    <input id="middle-name" name="email"class="form-control" type="text" name="middle-name">
+                    <input name="email" class="form-control" type="text">
                 </div>
             </div>
             <div class="item form-group">
-                <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">ijazah</label>
+                <label class="col-form-label col-md-3 col-sm-3 label-align">ijazah</label>
                 <div class="col-md-6 col-sm-6 ">
-                    <input id="middle-name" name="ijazah" class="form-control" type="file" name="middle-name">
+                    <input name="ijazah" class="form-control" type="file">
                 </div>
             </div>
             <div class="item form-group">
-                <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">foto</label>
+                <label class="col-form-label col-md-3 col-sm-3 label-align">foto</label>
                 <div class="col-md-6 col-sm-6 ">
-                    <input id="middle-name" name="foto" class="form-control" type="file" name="middle-name">
+                    <input name="foto" class="form-control" type="file">
                 </div>
             </div>
             <div class="item form-group">
-                <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">lamaran</label>
+                <label class="col-form-label col-md-3 col-sm-3 label-align">lamaran</label>
                 <div class="col-md-6 col-sm-6 ">
-                    <input id="middle-name" name="lamaran" class="form-control" type="file" name="middle-name">
+                    <input name="lamaran" class="form-control" type="file">
                 </div>
             </div>
             <div class="item form-group">
-                <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">alamat</label>
+                <label class="col-form-label col-md-3 col-sm-3 label-align">alamat</label>
                 <div class="col-md-6 col-sm-6 ">
-                    <input id="middle-name" name="alamat" class="form-control" type="text" name="middle-name">
+                    <input name="alamat" class="form-control" type="text">
                 </div>
             </div>
             <div class="item form-group">
-                <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">password</label>
+                <label class="col-form-label col-md-3 col-sm-3 label-align">password</label>
                 <div class="col-md-6 col-sm-6 ">
-                    <input id="middle-name" name="password" class="form-control" type="password" name="middle-name">
+                    <input name="password" class="form-control" type="password">
                 </div>
             </div>
             <div class="item form-group">
                 <label class="col-form-label col-md-3 col-sm-3 label-align">Date Of Birth <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 ">
-                    <input id="birthday" class="date-picker form-control" placeholder="dd-mm-yyyy" type="date"
+                    <input class="date-picker form-control" placeholder="dd-mm-yyyy" type="date" name="ttl"
                         required="required" onfocus="this.type='date'" onmouseover="this.type='date'"
                         onclick="this.type='date'" onblur="this.type='text'" onmouseout="timeFunctionLong(this)">
                     <script>

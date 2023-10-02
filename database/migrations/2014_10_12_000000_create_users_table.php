@@ -16,8 +16,8 @@ class CreateUsersTable extends Migration
             $table->date('ttl');
             $table->string('nohp');
             $table->string('email')->unique();
-            $table->file('ijazah');
-            $table->file('foto');
+            $table->string('ijazah');
+            $table->string('foto');
             $table->string('lamaran');
             $table->string('alamat');
             $table->string('role')->nullable();
