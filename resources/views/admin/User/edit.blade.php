@@ -5,7 +5,7 @@
         <form id="demo-form2" class="form-horizontal form-label-left" action="{{ route('user.update') }}" method="POST"
             enctype="multipart/form-data">
             @csrf
-            {{ methode_field('put') }}
+            {{ method_field('put') }}
             <div class="item form-group">
                 <label class="col-form-label col-md-3 col-sm-3 label-align">Nama <span class="required">*</span>
                 </label>
