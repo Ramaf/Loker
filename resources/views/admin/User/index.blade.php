@@ -36,7 +36,9 @@
                     <td>
                         <img src="{{ Storage::url($user->foto) }}" alt="ijazah Default" style="width: 100px;">
                     </td>
-                    <td>{{ $user->lamaran }}</td>
+                    <td>
+                        <img src="{{ Storage::url($user->lamaran) }}" alt="ijazah Default" style="width: 100px;">
+                    </td>
                     <td>{{ $user->alamat }}</td>
                     <td>{{ $user->ttl }}</td>
                     <td><a href="" class="href">edit</a> || <a href="" class="href">Delete</a></td>

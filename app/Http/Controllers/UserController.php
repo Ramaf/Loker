@@ -15,7 +15,7 @@ class UserController extends Controller
         $daftar_user = User::paginate();
         $count = User::count();
 
-        return view('admin.user.index', compact( 'daftar_user',));
+        return view('admin.user.index', compact('daftar_user',));
     }
 
 
@@ -46,7 +46,7 @@ class UserController extends Controller
         $lamaran = $request->file('lamaran');
 
         // Resize gambar menjadi ukuran yang diinginkan, contoh 400x300 pixels
-        $resizedImage = Image::make($foto)->fit(400, 300);
+        $resizedImage = Image::make($foto);
         $resizedImage2 = Image::make($ijazah);
         $resizedImage3 = Image::make($lamaran);
 
@@ -56,9 +56,9 @@ class UserController extends Controller
         $extension3 = $lamaran->getClientOriginalExtension();
 
         // Menamai gambar baru dengan timestamp dan ekstensi yang sama
-        $foto = time() . '.' . $extension;
-        $lamaran = time() . '.' . $extension2;
-        $ijazah = time() . '.' . $extension3;
+        $foto = 'foto_' . time() . '.' . $extension;
+        $lamaran = 'lamaran_' . time() . '.' . $extension2;
+        $ijazah = 'ijazah_' . time() . '.' . $extension3;
 
         // Simpan gambar yang sudah diresize ke direktori storage/app/public/gambar
         Storage::disk('public')->put('gambar/' . $foto, $resizedImage->stream());
