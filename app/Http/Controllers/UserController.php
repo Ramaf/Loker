@@ -94,7 +94,7 @@ class UserController extends Controller
         if (!$user) {
             return abort(404);
         }
-        return view('user.edit')->with('user', $user)->with('user', $user);
+        return view('admin.user.edit')->with('user', $user)->with('user', $user);
     }
 
     public function update(Request $request, $id)

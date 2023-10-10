@@ -41,7 +41,7 @@
                     </td>
                     <td>{{ $user->alamat }}</td>
                     <td>{{ $user->ttl }}</td>
-                    <td><a href="" class="href">edit</a> || <a href="{{ route('user.destroy', ['id'=>$user->id])}}" class="text-danger">Delete</a></td>
+                    <td><a href="{{ route('user.edit', ['id'=>$user->id])}}" class="text-info">edit</a> || <a href="{{ route('user.destroy', ['id'=>$user->id])}}" class="text-danger">Delete</a></td>
                 </tr>
             @endforeach
         </tbody>
