@@ -115,7 +115,7 @@ class UserController extends Controller
         $user = User::find($id);
         $user->delete();
         Session::flash('delete', 'User berhasil dihapus!');
-        return redirect()->route('user');
+        return redirect()->route('user.index');
     }
 
     public function ajaxSearch(Request $request)
