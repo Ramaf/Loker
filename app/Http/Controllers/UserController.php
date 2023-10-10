@@ -12,7 +12,10 @@ class UserController extends Controller
 {
     public function index()
     {
-        return view('admin.user.index');
+        $daftar_user = User::paginate();
+        $count = User::count();
+
+        return view('admin.user.index', compact( 'daftar_user',));
     }
 
 
