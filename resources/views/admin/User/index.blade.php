@@ -4,7 +4,7 @@
 <table class="table table-bordered">
                       <thead>
                         <tr>
-                          <th>#</th>
+                          <th>Nogit</th>
                           <th>Nama</th>
                           <th>umur</th>
                           <th>nohp</th>
