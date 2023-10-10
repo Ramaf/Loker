@@ -33,9 +33,9 @@ class UserController extends Controller
             'umur' => 'required',
             'nohp' => 'required',
             'email' => 'required',
-            'ijazah' => 'required|image|mimes:jpeg,png,jpg,gif',
+            'ijazah' => 'required|mimes:pdf',
             'foto' => 'required|image|mimes:jpeg,png,jpg,gif',
-            'lamaran' => 'required|image|mimes:jpeg,png,jpg,gif',
+            'lamaran' => 'required|mimes:pdf',
             'alamat' => 'required',
             'password' => 'required',
             'ttl' => 'required',
@@ -47,8 +47,8 @@ class UserController extends Controller
 
         // Resize gambar menjadi ukuran yang diinginkan, contoh 400x300 pixels
         $resizedImage = Image::make($foto);
-        $resizedImage2 = Image::make($ijazah);
-        $resizedImage3 = Image::make($lamaran);
+        // $resizedImage2 = Image::make($ijazah);
+        // $resizedImage3 = Image::make($lamaran);
 
         // Mendapatkan ekstensi dari file gambar
         $extension = $foto->getClientOriginalExtension();
@@ -57,23 +57,23 @@ class UserController extends Controller
 
         // Menamai gambar baru dengan timestamp dan ekstensi yang sama
         $foto = 'foto_' . time() . '.' . $extension;
-        $lamaran = 'lamaran_' . time() . '.' . $extension2;
-        $ijazah = 'ijazah_' . time() . '.' . $extension3;
+        $lamaranFileName = 'ijazah_' . time() . '.' . $extension2;
+        $ijazahFileName = 'lamaran_' . time() . '.' . $extension3;
 
         // Simpan gambar yang sudah diresize ke direktori storage/app/public/gambar
         Storage::disk('public')->put('gambar/' . $foto, $resizedImage->stream());
-        Storage::disk('public')->put('gambar/' . $ijazah, $resizedImage2->stream());
-        Storage::disk('public')->put('gambar/' . $lamaran, $resizedImage3->stream());
-        // Buat instance dari model Blog
+        $ijazah->storeAs('public/pdf', $ijazahFileName);
+        $lamaran->storeAs('public/pdf', $lamaranFileName);
+        // Buat instance dari model user
         $user = new User();
         $user->nama = $request->nama;
         $user->umur = $request->umur;
-        $user->nohp = $request->nohp; // Simpan path gambar ke dalam database
+        $user->nohp = $request->nohp;
         $user->email = $request->email;
-        $user->ijazah = 'gambar/' . $ijazah;
+        $user->ijazah = 'pdf/' . $ijazahFileName;
         $user->foto = 'gambar/' . $foto;
-        $user->lamaran = 'gambar/' . $lamaran;
-        $user->alamat = $request->alamat; // Simpan path gambar ke dalam database
+        $user->lamaran = 'pdf/' . $lamaranFileName;
+        $user->alamat = $request->alamat;
         $user->password = $request->password;
         $user->ttl = $request->ttl;;
 
@@ -100,14 +100,65 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nama' => 'required|max:191',
+            'nama' => 'required',
+            'umur' => 'required',
+            'nohp' => 'required',
+            'email' => 'required',
+            'ijazah' => 'nullable|mimes:pdf',
+            'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif',
+            'lamaran' => 'nullable|mimes:pdf',
+            'alamat' => 'required',
+            'password' => 'required',
+            'ttl' => 'required',
         ]);
 
         $user = User::find($id);
         $user->nama = $request->nama;
+        $user->umur = $request->umur;
+        $user->nohp = $request->nohp;
+        $user->email = $request->email;
+        $user->alamat = $request->alamat;
+        $user->password = $request->password;
+        $user->ttl = $request->ttl;
+
+        // Cek apakah ada file baru diunggah untuk ijazah, jika tidak, gunakan file yang lama
+        if ($request->hasFile('ijazah')) {
+            // Hapus ijazah lama jika ada
+            if ($user->ijazah && Storage::exists($user->ijazah)) {
+                Storage::delete($user->ijazah);
+            }
+
+            // Simpan ijazah baru
+            $ijazah = $request->file('ijazah')->store('public/pdf');
+            $user->ijazah = $ijazah;
+        }
+
+        // Cek apakah ada file baru diunggah untuk foto, jika tidak, gunakan file yang lama
+        if ($request->hasFile('foto')) {
+            // Hapus foto lama jika ada
+            if ($user->foto && Storage::exists($user->foto)) {
+                Storage::delete($user->foto);
+            }
+
+            // Simpan foto baru
+            $foto = $request->file('foto')->store('public/gambar');
+            $user->foto = $foto;
+        }
+
+        // Cek apakah ada file baru diunggah untuk lamaran, jika tidak, gunakan file yang lama
+        if ($request->hasFile('lamaran')) {
+            // Hapus lamaran lama jika ada
+            if ($user->lamaran && Storage::exists($user->lamaran)) {
+                Storage::delete($user->lamaran);
+            }
+
+            // Simpan lamaran baru
+            $lamaran = $request->file('lamaran')->store('public/pdf');
+            $user->lamaran = $lamaran;
+        }
         $user->save();
         Session::flash('update', 'User berhasil di update!');
-        return redirect()->route('user');
+        return redirect()->route('user.index');
     }
 
     public function destroy($id)

@@ -31,13 +31,13 @@
                     <td>{{ $user->nohp }}</td>
                     <td>{{ $user->email }}</td>
                     <td>
-                        <img src="{{ Storage::url($user->ijazah) }}" alt="ijazah Default" style="width: 100px;">
+                        <a href="{{ Storage::url($user->ijazah) }}" class="href" target="_blank">View Ijazah</a>
                     </td>
                     <td>
                         <img src="{{ Storage::url($user->foto) }}" alt="ijazah Default" style="width: 100px;">
                     </td>
                     <td>
-                        <img src="{{ Storage::url($user->lamaran) }}" alt="ijazah Default" style="width: 100px;">
+                        <a href="{{ Storage::url($user->lamaran) }}" class="href" target="_blank">View Lamaran</a>
                     </td>
                     <td>{{ $user->alamat }}</td>
                     <td>{{ $user->ttl }}</td>
