@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LokerController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\InfoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,7 @@ Route::get('/', function () {
 Route::get('/loker', [LokerController::class, 'index']);
 Route::get('/user', [UserController::class, 'index'])->name('user.index');
 Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
+Route::get('/loker/create', [InfoController::class, 'create'])->name('loker.create');
 Route::post('/user/store', [UserController::class, 'store'])->name('user.store');
 Route::get('/user/edit/{id}', [UserController::class, 'edit'])->name('user.edit');
 Route::put('/user/update/{id}', [UserController::class, 'update'])->name('user.update');
