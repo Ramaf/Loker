@@ -20,6 +20,11 @@
     <!-- iCheck -->
     <link href="/assets/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
 
+    <link href="https://colorlib.com/polygon/vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+    <link href="https://colorlib.com/polygon/vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+    <link href="https://colorlib.com/polygon/vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+    <link href="https://colorlib.com/polygon/vendors/starrr/dist/starrr.css" rel="stylesheet">
+
     <!-- bootstrap-progressbar -->
     <link href="/assets/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- JQVMap -->
@@ -119,6 +124,14 @@
     <script src="/assets/vendors/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
     <script src="/assets/vendors/nprogress/nprogress.js"></script>
+    <script src="https://colorlib.com/polygon/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <script src="https://colorlib.com/polygon/vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+    <script src="https://colorlib.com/polygon/vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+    <script src="https://colorlib.com/polygon/vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+    <script src="https://colorlib.com/polygon/vendors/switchery/dist/switchery.min.js"></script>
+    <script src="https://colorlib.com/polygon/vendors/select2/dist/js/select2.full.min.js"></script>
+    <script src="https://colorlib.com/polygon/vendors/starrr/dist/starrr.js"></script>
+    <script src="https://colorlib.com/polygon/vendors/google-code-prettify/src/prettify.js"></script>
     <!-- Chart.js -->
     <script src="/assets/vendors/Chart.js/dist/Chart.min.js"></script>
     <!-- gauge.js -->
