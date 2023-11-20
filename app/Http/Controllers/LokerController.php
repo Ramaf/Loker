@@ -17,18 +17,24 @@ class LokerController extends Controller
 
     public function create()
     {
-        return view('loker.create');
+        return view('admin.loker.create');
     }
 
     public function store(Request $request)
     {
         // dd($request->all());
         $this->validate($request,[
-            'nama'=>'required',
+            'judul'=>'required',
+            'deskripsi'=>'required',
+            'snk'=>'required',
+            'kuota'=>'required',
         ]);
 
         $loker = new Loker();
-        $loker->nama = $request->nama;
+        $loker->judul = $request->judul;
+        $loker->deskripsi = $request->deskripsi;
+        $loker->snk = $request->snk;
+        $loker->kuota = $request->kuota;
 
     	if(!$loker->save()){
             Session::flash('gagal','Yamaap, Loker gagal disimpan!!');

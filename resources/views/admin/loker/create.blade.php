@@ -1,10 +1,29 @@
 @extends('layouts.master')
 @section('title', 'Category')
 @section('content')
+    <div class="x_content">
+        <form id="demo-form2" class="form-horizontal form-label-left" action="{{ route('loker.store') }}" method="POST">
+            @csrf
+            <div class="item form-group">
+                <label class="col-form-label col-md-3 col-sm-3 label-align">Nama Loker <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 ">
+                    <input type="text" name="judul" required="required" class="form-control ">
+                </div>
+            </div>
+
+            <div class="item form-group">
+                <label class="col-form-label col-md-3 col-sm-3 label-align">Deskripsi Singkat<span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 ">
+                    <input type="text" name="deskripsi" required="required" class="form-control ">
+                </div>
+            </div>
+</div>
     <div class="col-md-12 col-sm-12 ">
         <div class="x_panel">
             <div class="x_title">
-                <h2>Text areas<small>Sessions</small></h2>
+                <h2>Syarat dan Ketentuan</h2>
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
@@ -66,10 +85,31 @@
                     </div>
                 </div>
                 <div id="editor-one" class="editor-wrapper placeholderText" contenteditable="true"></div>
-                <textarea name="descr" id="descr" style="display:none;"></textarea>
+                <textarea name="snk" id="descr" style="display:none;"></textarea>
                 <br>
                 <div class="ln_solid"></div>
             </div>
         </div>
+
+        <div class="x_content">
+        <form id="demo-form2" class="form-horizontal form-label-left" action="{{ route('user.store') }}" method="POST"
+            enctype="multipart/form-data">
+            @csrf
+            <div class="item form-group">
+                <label class="col-form-label col-md-3 col-sm-3 label-align">kuota<span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 ">
+                    <input type="number" name="kuota" required="required" class="form-control ">
+                </div>
+            </div>
+            <div class="ln_solid"></div>
+            <div class="item form-group">
+                <div class="col-md-6 col-sm-6 offset-md-3">
+                    <button class="btn btn-primary" type="button">Cancel</button>
+                    <button class="btn btn-primary" type="reset">Reset</button>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+            </div>
+</div>
     </div>
 @endsection

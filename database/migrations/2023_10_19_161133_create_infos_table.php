@@ -16,6 +16,7 @@ class CreateInfosTable extends Migration
         Schema::create('infos', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
+            $table->string('deskripsi');
             $table->string('snk');
             $table->string('kuota');
         });

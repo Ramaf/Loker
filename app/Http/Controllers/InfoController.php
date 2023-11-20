@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Info;
 
 class InfoController extends Controller
 {
@@ -23,11 +24,17 @@ class InfoController extends Controller
     {
         // dd($request->all());
         $this->validate($request,[
-            'nama'=>'required',
+            'judul'=>'required',
+            'deskripsi'=>'required',
+            'snk'=>'required',
+            'kuota'=>'required',
         ]);
 
         $info = new Info();
-        $info->nama = $request->nama;
+        $loker->judul = $request->judul;
+        $loker->deskripsi = $request->deskripsi;
+        $loker->snk = $request->snk;
+        $loker->kuota = $request->kuota;
 
     	if(!$info->save()){
             Session::flash('gagal','Yamaap, Info gagal disimpan!!');
