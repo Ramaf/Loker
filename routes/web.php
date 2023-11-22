@@ -19,7 +19,7 @@ use App\Http\Controllers\InfoController;
 Route::get('/', function () {
     return view('user.welcome');
 });
-Route::get('/loker', [LokerController::class, 'index']);
+Route::get('/loker', [LokerController::class, 'index'])->name('loker');
 Route::get('/user', [UserController::class, 'index'])->name('user.index');
 Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
 Route::get('/loker/create', [InfoController::class, 'create'])->name('loker.create');

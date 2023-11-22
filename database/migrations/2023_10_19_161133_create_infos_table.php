@@ -16,9 +16,10 @@ class CreateInfosTable extends Migration
         Schema::create('infos', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
-            $table->string('deskripsi');
-            $table->string('snk');
-            $table->string('kuota');
+            $table->string('deskripsi')->nullable();
+            $table->string('snk')->nullable();
+            $table->string('kuota')->nullable();
+            $table->timestamps();
         });
     }
 

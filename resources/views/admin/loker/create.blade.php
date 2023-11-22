@@ -2,7 +2,7 @@
 @section('title', 'Category')
 @section('content')
     <div class="x_content">
-        <form id="demo-form2" class="form-horizontal form-label-left" action="{{ route('loker.store') }}" method="POST">
+        <form class="form-horizontal form-label-left" action="{{ route('loker.store') }}" method="POST">
             @csrf
             <div class="item form-group">
                 <label class="col-form-label col-md-3 col-sm-3 label-align">Nama Loker <span class="required">*</span>
@@ -19,7 +19,7 @@
                     <input type="text" name="deskripsi" required="required" class="form-control ">
                 </div>
             </div>
-</div>
+    </div>
     <div class="col-md-12 col-sm-12 ">
         <div class="x_panel">
             <div class="x_title">
@@ -84,32 +84,43 @@
                                 class="fa fa-align-justify"></i></a>
                     </div>
                 </div>
-                <div id="editor-one" class="editor-wrapper placeholderText" contenteditable="true"></div>
-                <textarea name="snk" id="descr" style="display:none;"></textarea>
+                <div id="editor-one" class="editor-wrapper placeholderText" contenteditable="true" name="snk"></div>
+                <textarea name="snk" id="descr" ></textarea>
                 <br>
                 <div class="ln_solid"></div>
             </div>
         </div>
 
-        <div class="x_content">
-        <form id="demo-form2" class="form-horizontal form-label-left" action="{{ route('user.store') }}" method="POST"
-            enctype="multipart/form-data">
-            @csrf
-            <div class="item form-group">
-                <label class="col-form-label col-md-3 col-sm-3 label-align">kuota<span class="required">*</span>
-                </label>
-                <div class="col-md-6 col-sm-6 ">
-                    <input type="number" name="kuota" required="required" class="form-control ">
-                </div>
+        <div class="item form-group">
+            <label class="col-form-label col-md-3 col-sm-3 label-align">kuota<span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6 ">
+                <input type="number" name="kuota" required="required" class="form-control ">
             </div>
-            <div class="ln_solid"></div>
-            <div class="item form-group">
-                <div class="col-md-6 col-sm-6 offset-md-3">
-                    <button class="btn btn-primary" type="button">Cancel</button>
-                    <button class="btn btn-primary" type="reset">Reset</button>
-                    <button type="submit" class="btn btn-success">Submit</button>
-                </div>
+        </div>
+        <div class="ln_solid"></div>
+        <div class="item form-group">
+            <div class="col-md-6 col-sm-6 offset-md-3">
+                <button class="btn btn-primary" type="reset">Reset</button>
+                <button type="submit" class="btn btn-success">Submit</button>
             </div>
-</div>
-    </div>
-@endsection
+        </div>
+        </form>
+        </div>
+    @endsection
+
+
+    @push('page-script')
+<script>
+    // Ambil elemen-elemen
+var editor = document.getElementById("editor-one");
+var textarea = document.getElementById("descr");
+
+// Tambahkan event listener untuk memantau perubahan pada editor
+editor.addEventListener("input", function() {
+    // Setel nilai textarea dengan nilai editor
+    textarea.value = editor.innerHTML;
+});
+</script>
+    @endpush
+
